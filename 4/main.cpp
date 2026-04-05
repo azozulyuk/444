@@ -52,17 +52,17 @@ int main() {
     Menu c("You have bills that are not saved. Are you sure you want to exit?", "No");
     c << "Yes";
 
-    int done = 0;
+    int doneNow = 0;
 
-    while (!done) {
-        int ch = m.run();
+    while (!doneNow) {
+        int newchoice = m.run();
 
-        switch (ch) {
+        switch (newchoice) {
 
         case 1: {
-            int sub = o.run();
-            if (sub == 1) ord.orderFood();
-            else if (sub == 2) ord.orderDrink();
+            int option = o.run();
+            if (option == 1) ord.orderFood();
+            else if (option == 2) ord.orderDrink();
             break;
         }
 
@@ -84,10 +84,10 @@ int main() {
 
         case 0:
             if (ord.hasUnsavedBill()) {
-                int x = c.run();
-                if (x == 1) done = 1;
+                int check = c.run();
+                if (check == 1) doneNow = 1;
             } else {
-                done = 1;
+                doneNow = 1;
             }
             break;
         }
