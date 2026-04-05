@@ -42,7 +42,7 @@ namespace seneca {
     ostream& Food::print(ostream& os) const {
         os << m_name;
 
-        int dots = 33 - strlen(m_name);
+        int dots = (m_size == 0 ? 33 : 28) - strlen(m_name);
         if (dots < 0) dots = 0;
 
         for (int i = 0; i < dots; i++) os << '.';
