@@ -41,7 +41,7 @@ namespace seneca {
     ostream& Drink::print(ostream& os) const {
         os << m_name;
 
-        int dots = 33 - strlen(m_name);
+        int dots = (m_size == 0 ? 33 : 28) - strlen(m_name);
         if (dots < 0) dots = 0;
 
         for (int i = 0; i < dots; i++) os << '.';
@@ -59,7 +59,7 @@ namespace seneca {
         cout << "         Drink Size Selection" << endl;
         cout << "          1- Small" << endl;
         cout << "          2- Medium" << endl;
-        cout << "          3- Large" << endl;
+        cout << "          3- Larg" << endl;
         cout << "          4- Extra Large" << endl;
         cout << "          0- Back" << endl;
         cout << "         > ";
